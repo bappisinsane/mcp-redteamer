@@ -1,0 +1,43 @@
+{
+  "project_name": "mcp-redteamer",
+  "version": "0.1.0",
+  "description": "An automated CLI framework and testbed that red-teams Model Context Protocol (MCP) servers and AI tool-calling agents inside isolated Docker containers to evaluate resilience against indirect prompt injections and unauthorized tool invocation.",
+  "tech_stack": {
+    "language": "Python 3.11+",
+    "cli_tui_framework": "Rich / Textual / Typer",
+    "mcp_sdk": "mcp (Model Context Protocol Python SDK)",
+    "containerization": "Docker SDK for Python",
+    "llm_orchestration": "Ollama API / vLLM / LiteLLM"
+  },
+  "architecture": {
+    "execution_environment": {
+      "target_isolation": "Docker container (read-only mount, isolated bridge network)",
+      "attacker_engine": "Local user-space Python CLI app"
+    },
+    "core_components": [
+      "target_manager",
+      "payload_synthesizer",
+      "mcp_adapter",
+      "response_evaluator",
+      "tui_dashboard"
+    ]
+  },
+  "file_structure": [
+    "pyproject.toml",
+    "mcp_redteamer/__init__.py",
+    "mcp_redteamer/main.py",
+    "mcp_redteamer/core/target.py",
+    "mcp_redteamer/core/mcp_client.py",
+    "mcp_redteamer/attacker/synthesizer.py",
+    "mcp_redteamer/attacker/evaluator.py",
+    "mcp_redteamer/ui/dashboard.py",
+    "mcp_redteamer/reports/generator.py",
+    "targets/sample_mcp_server/server.py",
+    "targets/sample_mcp_server/Dockerfile",
+    "PRD.md",
+    "ARCHITECTURE.md",
+    "RULES.md",
+    "PHASES.md",
+    "MEMORY.md"
+  ]
+}
